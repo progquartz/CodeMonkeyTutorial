@@ -13,7 +13,7 @@ public class KitchenObject : MonoBehaviour
         return kitchenObjectSO;
     }
 
-    public void SetKitchenObjectParent( IKitchenObjectParent kitchenObjectParent)
+    public void SetKitchenObjectParent(IKitchenObjectParent kitchenObjectParent)
     {
         if(this.kitchenObjectParent != null) // 이전의 counter가 비어있지않다면.
         {
@@ -28,7 +28,6 @@ public class KitchenObject : MonoBehaviour
         }
 
         kitchenObjectParent.SetKitchenObject(this);
-
         transform.parent = kitchenObjectParent.GetKitchenObjectFollowTransform();
         transform.localPosition = Vector3.zero;
     }

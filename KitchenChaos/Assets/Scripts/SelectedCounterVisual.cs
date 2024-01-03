@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class SelectedCounterVisual : MonoBehaviour
 {
-    [SerializeField] private ClearCounter clearCounter;
-    [SerializeField] private GameObject visualGameObject;
+    [SerializeField] private BaseCounter baseCounter;
+    [SerializeField] private GameObject[] visualGameObjectArray;
 
     // 이를 awake에 두지 않는 이유는, player의 awake가 이보다 먼저 실행되게 되나면 오류가 일어날 것이기 때문임.
     private void Start()
@@ -15,7 +15,7 @@ public class SelectedCounterVisual : MonoBehaviour
 
     private void Player_OnSelectedCounterChanged(object sender, Player.OnSelectedCounterChangedEventArgs e)
     {
-        if(e.selectedCounter == clearCounter)
+        if(e.selectedCounter == baseCounter)
         {
             Show();
         }
@@ -27,11 +27,19 @@ public class SelectedCounterVisual : MonoBehaviour
 
     private void Show()
     {
-        visualGameObject.SetActive(true);
+        foreach(GameObject visualGameObject in visualGameObjectArray)
+        {
+            visualGameObject.SetActive(true);
+        }
+
+        
     }
 
     private void Hide()
     {
-        visualGameObject.SetActive(false);
+        foreach (GameObject visualGameObject in visualGameObjectArray)
+        {
+            visualGameObject.SetActive(false);
+        }
     }
 }

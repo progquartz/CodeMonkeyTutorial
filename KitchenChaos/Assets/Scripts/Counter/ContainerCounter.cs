@@ -9,11 +9,11 @@ public class ContainerCounter : BaseCounter, IKitchenObjectParent
     public event EventHandler OnPlayerGrabbedObject;
     public override void Interact(Player player)
     {
-        // 무한 소환 금지.
-        if (!HasKitchenObject())
+        if(!player.HasKitchenObject())
         {
             Transform kitchenObjectTransform = Instantiate(kitchenObjectSO.prefab);
             kitchenObjectTransform.GetComponent<KitchenObject>().SetKitchenObjectParent(player);
+
             OnPlayerGrabbedObject?.Invoke(this, EventArgs.Empty);
         }
     }

@@ -11,6 +11,7 @@ public class DeliveryCounter : BaseCounter
             // 만약 접시일 경우만 삭제.
             if(player.GetKitchenObject().TryGetPlate(out PlateKitchenObject plateKitchenObject))
             {
+                DeliveryManager.Instance.DeliverRecipe(plateKitchenObject);
                 player.GetKitchenObject().DestroySelf();
             }
         }

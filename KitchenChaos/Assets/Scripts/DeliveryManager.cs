@@ -20,6 +20,7 @@ public class DeliveryManager : MonoBehaviour
 
     private float spawnRecipeTimer;
     private float spawnRecipeTimerMax = 4f;
+    private int successfulRecipesAmount;
 
     private void Awake()
     {
@@ -79,6 +80,7 @@ public class DeliveryManager : MonoBehaviour
                 if (plateContentsMathesRecipe)
                 {
                     // 레시피에 맞는 재료가 옴!.
+                    successfulRecipesAmount++;
                     Debug.Log("player delivered the correct recipe!");
                     waitingRecipeSOList.RemoveAt(i);
                     OnRecipeCompleted?.Invoke(this, EventArgs.Empty);
@@ -100,4 +102,9 @@ public class DeliveryManager : MonoBehaviour
     {
         return waitingRecipeSOList;
     }
+    public int GetSuccessfulRecipeAmount()
+    {
+        return successfulRecipesAmount;
+    }
+
 }

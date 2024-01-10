@@ -13,8 +13,8 @@ GameObject:
   - component: {fileID: 5730784277270627798}
   - component: {fileID: 2331263209542999442}
   - component: {fileID: 7454315993004654272}
-  - component: {fileID: 2686952704784464691}
   - component: {fileID: 5385902226377341417}
+  - component: {fileID: 8414607331984209235}
   m_Layer: 0
   m_Name: PlateIconUI
   m_TagString: Untagged
@@ -129,20 +129,6 @@ MonoBehaviour:
   m_Spacing: {x: 0, y: 0}
   m_Constraint: 0
   m_ConstraintCount: 2
---- !u!114 &2686952704784464691
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1823577788899894729}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c02ba93ff3d597b478cd8752315e803e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  plateKitchenObject: {fileID: 3418920505259923728}
-  iconTemplate: {fileID: 4496862410069444190}
 --- !u!114 &5385902226377341417
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -156,6 +142,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mode: 2
+--- !u!114 &8414607331984209235
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1823577788899894729}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c02ba93ff3d597b478cd8752315e803e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  plateKitchenObject: {fileID: 3418920505259923728}
+  iconTemplate: {fileID: 4496862410069444190}
 --- !u!1 &2249416105885380492
 GameObject:
   m_ObjectHideFlags: 0
@@ -242,7 +242,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4496862410069444190}
-  - component: {fileID: 8501087729336712444}
+  - component: {fileID: 8328013315776214447}
   m_Layer: 0
   m_Name: IconTemplate
   m_TagString: Untagged
@@ -272,7 +272,7 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &8501087729336712444
+--- !u!114 &8328013315776214447
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

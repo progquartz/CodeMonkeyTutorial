@@ -123,7 +123,7 @@ public class Player : MonoBehaviour, IKitchenObjectParent
 
             // Attemt only X movement
             Vector3 moveDirX = new Vector3(moveDir.x, 0, 0);
-            canMove = moveDir.x != 0 && !Physics.CapsuleCast(transform.position, transform.position + Vector3.up * playerHeight, playerRadius, moveDirX, moveDistance);
+            canMove = moveDir.x < -.25f || moveDir.x > +.25f && !Physics.CapsuleCast(transform.position, transform.position + Vector3.up * playerHeight, playerRadius, moveDirX, moveDistance);
             if (canMove)
             {
                 // move on x axis.
@@ -134,7 +134,7 @@ public class Player : MonoBehaviour, IKitchenObjectParent
                 // X로 못움직임.
                 // Z축 이동 시도.
                 Vector3 moveDirZ = new Vector3(0, 0, moveDir.z);
-                canMove = moveDir.z != 0 && !Physics.CapsuleCast(transform.position, transform.position + Vector3.up * playerHeight, playerRadius, moveDirZ, moveDistance);
+                canMove = moveDir.z < -.25f || moveDir.z > +.25f && !Physics.CapsuleCast(transform.position, transform.position + Vector3.up * playerHeight, playerRadius, moveDirZ, moveDistance);
                 if (canMove)
                 {
                     moveDir = moveDirZ;

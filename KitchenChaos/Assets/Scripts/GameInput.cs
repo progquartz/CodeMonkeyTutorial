@@ -20,7 +20,10 @@ public class GameInput : MonoBehaviour
         Move_Right,
         Interact,
         InteractAlternate,
-        Pause
+        Pause,
+        Gamepad_Interact,
+        Gamepad_InteractAlternate,
+        Gamepad_Pause
     }
 
     private PlayerInputActions playerInputActions;
@@ -54,6 +57,7 @@ public class GameInput : MonoBehaviour
         playerInputActions.Player.InteractAlternate.performed -= InteractAlternate_performed;
         playerInputActions.Player.Pause1.performed -= Pause_performed;
 
+        // static 이벤트를 연결할 경우, dispose를 시키지 않으면 event를 listen 하는 객체가 무한히 늘음.
         playerInputActions.Dispose();
     }
 
@@ -110,6 +114,12 @@ public class GameInput : MonoBehaviour
                 return playerInputActions.Player.Move.bindings[3].ToDisplayString();
             case Binding.Move_Right:
                 return playerInputActions.Player.Move.bindings[4].ToDisplayString();
+            case Binding.Gamepad_Interact:
+                return playerInputActions.Player.Interact.bindings[1].ToDisplayString();
+            case Binding.Gamepad_InteractAlternate:
+                return playerInputActions.Player.InteractAlternate.bindings[1].ToDisplayString();
+            case Binding.Gamepad_Pause:
+                return playerInputActions.Player.Pause1.bindings[1].ToDisplayString();
 
         }
     }
@@ -150,6 +160,18 @@ public class GameInput : MonoBehaviour
             case Binding.Pause:
                 inputAction = playerInputActions.Player.Pause1;
                 bindingIndex = 0;
+                break;
+            case Binding.Gamepad_Interact:
+                inputAction = playerInputActions.Player.Interact;
+                bindingIndex = 1;
+                break;
+            case Binding.Gamepad_InteractAlternate:
+                inputAction = playerInputActions.Player.InteractAlternate;
+                bindingIndex = 1;
+                break;
+            case Binding.Gamepad_Pause:
+                inputAction = playerInputActions.Player.Pause1;
+                bindingIndex = 1;
                 break;
 
         }
